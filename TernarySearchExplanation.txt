@@ -1,0 +1,27 @@
+Certainly! The provided Python code is an implementation of the ternary search algorithm. Here's a step-by-step explanation of the code:
+
+### Ternary Search Function: `ternarySearch(target, nums, left, right)`
+
+1. **Base Case**: If the `left` index is greater than the `right` index, it means that the search space is empty, and the function returns `-1`, indicating that the target is not found in the list.
+
+2. **Calculate Thirds**:
+   - The search space between `left` and `right` is divided into three equal parts.
+   - `third` is calculated as one-third of the length of the current search segment.
+   - `mid1` and `mid2` are calculated to represent the positions that split the array into three equal parts.
+
+3. **Check Midpoints**:
+   - The algorithm checks if the value at `mid1` or `mid2` is equal to the `target`. If so, it returns the index (`mid1` or `mid2`).
+
+4. **Recursive Search**:
+   - If the target is greater than the value at `mid1`, it means the target can only be in the left segment of the array. The function is then called recursively for the left segment.
+   - If the target is less than the value at `mid2`, it means the target can only be in the right segment of the array. The function is called recursively for the right segment.
+   - If the target is not found in the above two conditions, it must be in the middle segment, so the function is called recursively for the middle segment. 
+
+### Driver Program
+
+- The `main` function serves as a driver to test the `ternarySearch` function.
+- It first defines a list of numbers `nums1` and uses list comprehension to apply `ternarySearch` to each target value in the list `[11, 111]`. The results are printed, which should be `[6, -1]`. The `6` indicates that the number `11` is found at index `6` in `nums1`, and `-1` indicates that `111` is not found.
+- Then, it defines another list `nums2` by generating a list of numbers from `1000` to `10` in steps of `-10` (a descending order list).
+- Similarly, `ternarySearch` is applied to each target value in the list `[460, 466]`, and the results are printed, which should be `[54, -1]`. The `54` indicates that the number `460` is found at index `54` in `nums2`, and `-1` indicates that `466` is not found.
+
+This code adheres to the ternary search logic and also follows the instructions given in the lab exam question you provided.
